@@ -14,7 +14,7 @@ public class CarExample {
     public static void main(String[] args) {
         // przykład metody fabrycznej czyli wywolujemy metodę która od rzau tworzy obiekt z bebechami - asList
         List<Car> Cars = Arrays.asList(
-                new Car("Ford", "Fiesta", "Black", 1, LocalDate.of(2011, 11, 1)),
+                new Car("Ford", "Fiesta", "Black", 1.2f, LocalDate.of(2011, 11, 1)),
                 new Car("Ford", "Fous", "White", 1, LocalDate.of(2010, 9, 1)),
                 new Car("Ford", "Kuga", "Green", 1, LocalDate.of(2009, 3, 1)),
                 new Car("Ford", "MusTanG", "Green", 1, LocalDate.of(2009, 3, 1)),
@@ -58,13 +58,14 @@ public class CarExample {
 
         // klaska która sortuje po
 
-        Cars.sort((o1, o2) -> SortbyEnything.sortByType(o1,o2));
+        Cars.sort((o1, o2) -> SortbyEnything.sortByType(o1, o2));
         Cars.sort(SortbyEnything::sortByType);
 
- // funkcja wyższego rzędu albp przyjmuje jako argument funckeję albo produkuje funkcje
+        // funkcja wyższego rzędu albp przyjmuje jako argument funckeję albo produkuje funkcje
+        CompareByModel comparemodel = new CompareByModel();
 
-
-
+        //inna wersja sortowania funkcyjnie wyciągając klucze sortowania
+        Cars.sort(Comparator.comparing(Car::getBrand).thenComparing(Car::getModel));
 
 
     }
