@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public abstract class Animal {
 
-
-private String name;
     private static final int NAME_MMIn_LEN = 1;
+    protected String name;
+
     public Animal(String name) {
         this.name = Objects.requireNonNull(name, "Co to jest ???");
         //this.name = name;
