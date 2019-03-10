@@ -5,10 +5,10 @@ public class ticktack {
 
         Runnable ticktack = () -> {
             for (int i = 0; i < 30; i++) {
-                String deamonName = Thread.currentThread().getName() + "." + "thread-" + i;
+                 String deamonName = Thread.currentThread().getName() + "." + "thread-" + i;
                 System.out.println("TIK");
                 try {
-                    Thread.sleep(200); // janusz masz przerwę
+                       Thread.sleep(200); // janusz masz przerwę
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
